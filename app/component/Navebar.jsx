@@ -48,7 +48,7 @@ export default function Navbar() {
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-1">
             <NavLink href="#home" active={activeLink === '#home'} onClick={() => setActiveLink('#home')}>Home</NavLink>
-            <NavLink href="#products" active={activeLink === '#products'} onClick={() => setActiveLink('#products')}>Products</NavLink>
+            <NavLink href="products" active={activeLink === 'products'} onClick={() => setActiveLink('products')}>Products</NavLink>
             <NavLink href="#blog" active={activeLink === '#blog'} onClick={() => setActiveLink('#blog')}>Blog</NavLink>
             <NavLink href="#plant-clinic" active={activeLink === '#plant-clinic'} onClick={() => setActiveLink('#plant-clinic')}>Plant Clinic</NavLink>
           </div>
