@@ -103,10 +103,10 @@ export default function FeaturedProducts() {
 
   return (
     <section className="py-16 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-green-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{color: '#2D5016'}}>
             Popular Products
           </h2>
           <p className=' text-gray-600'>Discover our most popular gardening essentials</p>
@@ -206,7 +206,7 @@ export default function FeaturedProducts() {
                       </div>
 
                       {/* Add to Cart Button */}
-                      <button className="w-full bg-gradient-to-r from-green-700 to-green-800 text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-xl hover:from-green-800 hover:to-green-900 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 group/btn">
+                      <button className="w-full text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 group/btn" style={{backgroundColor: '#2D5016'}}>
                         <ShoppingCart className="w-5 h-5 group-hover/btn:scale-110 transition-transform duration-300" />
                         Add to Cart
                       </button>

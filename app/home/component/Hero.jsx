@@ -67,7 +67,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-gray-900">
+    <div className="relative w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[600px] mt-20 overflow-hidden bg-gray-900">
       {/* Background Images with Overlay */}
       {slides.map((slide, index) => (
         <div
@@ -82,18 +82,18 @@ export default function HeroSection() {
           <img
             src={slide.image}
             alt={slide.title}
-            className="w-full h-full object-cover"
+            className="w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[600px] object-cover"
           />
         </div>
       ))}
 
       {/* Content */}
-      <div className="relative z-20 h-full flex items-center">
+      <div className="relative z-20 h-full flex items-center pb-7">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl">
             {/* Title */}
             <h1 
-              className={`text-white text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 transition-all duration-700 ${
+              className={`text-white text-3xl sm:text-4xl lg:text-7xl font-bold mb-2 transition-all duration-700 ${
                 isAnimating ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'
               }`}
               style={{ transitionDelay: '100ms' }}
@@ -113,14 +113,14 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div 
-              className={`flex flex-col sm:flex-row gap-4 transition-all duration-700 ${
+              className={`flex flex-row sm:flex-row gap-4 transition-all duration-700 ${
                 isAnimating ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'
               }`}
               style={{ transitionDelay: '300ms' }}
             >
               <button 
                 onClick={() => setIsAutoPlaying(false)}
-                className="group relative px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-lg font-semibold rounded-full overflow-hidden shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105"
+                className="group relative px-2  md:px-8 md:py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-lg font-semibold rounded-full overflow-hidden shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105"
               >
                 <span className="relative z-10">Shop Now</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
@@ -128,7 +128,7 @@ export default function HeroSection() {
               
               <button 
                 onClick={() => setIsAutoPlaying(false)}
-                className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm text-white text-lg font-semibold rounded-full border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 shadow-xl"
+                className="group relative px-2  md:px-4  bg-white/10 backdrop-blur-sm text-white text-lg font-semibold rounded-full border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 shadow-xl"
               >
                 Call Now
               </button>
@@ -143,15 +143,15 @@ export default function HeroSection() {
         onMouseEnter={() => setIsAutoPlaying(false)}
         className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 sm:p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-xl group"
       >
-        <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8 group-hover:-translate-x-1 transition-transform duration-300" />
+        <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-8 group-hover:-translate-x-1 transition-transform duration-300" />
       </button>
 
       <button
         onClick={nextSlide}
         onMouseEnter={() => setIsAutoPlaying(false)}
-        className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 sm:p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-xl group"
+        className="absolute right-4  sm:right-8 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 sm:p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-xl group"
       >
-        <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8 group-hover:translate-x-1 transition-transform duration-300" />
+        <ChevronRight className="w-6 h-6 md:w-10 md:h-8 sm:w-8 sm:h-8 group-hover:translate-x-1 transition-transform duration-300" />
       </button>
 
       {/* Slide Indicators */}

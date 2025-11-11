@@ -55,14 +55,14 @@ export default function PlantClinicAnalysis() {
 
   return (
     <section className="py-16 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Content */}
           <div className="space-y-8">
             {/* Title */}
             <div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-green-900 mb-6 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight" style={{color: '#2D5016'}}>
                 Plant Clinic Analysis
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full mb-6"></div>
@@ -76,20 +76,20 @@ export default function PlantClinicAnalysis() {
             {/* Features List */}
             <div className="space-y-4">
               <div className="flex items-start gap-3 group">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors duration-300">
-                  <CheckCircle className="w-4 h-4 text-green-600" />
+                <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors duration-300" style={{backgroundColor: '#2D501620'}}>
+                  <CheckCircle className="w-4 h-4" style={{color: '#2D5016'}} />
                 </div>
                 <p className="text-gray-700">Instant AI-powered plant disease detection</p>
               </div>
               <div className="flex items-start gap-3 group">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors duration-300">
-                  <CheckCircle className="w-4 h-4 text-green-600" />
+                <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors duration-300" style={{backgroundColor: '#2D501620'}}>
+                  <CheckCircle className="w-4 h-4" style={{color: '#2D5016'}} />
                 </div>
                 <p className="text-gray-700">Expert treatment recommendations</p>
               </div>
               <div className="flex items-start gap-3 group">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors duration-300">
-                  <CheckCircle className="w-4 h-4 text-green-600" />
+                <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors duration-300" style={{backgroundColor: '#2D501620'}}>
+                  <CheckCircle className="w-4 h-4" style={{color: '#2D5016'}} />
                 </div>
                 <p className="text-gray-700">24/7 available plant health analysis</p>
               </div>
@@ -105,9 +105,13 @@ export default function PlantClinicAnalysis() {
                   onDrop={handleDrop}
                   className={`border-3 border-dashed rounded-2xl p-8 text-center transition-all duration-300 ${
                     isDragging
-                      ? 'border-green-500 bg-green-50'
-                      : 'border-gray-300 bg-gray-50 hover:border-green-400 hover:bg-green-50/50'
+                      ? 'bg-green-50' 
+                      : 'border-gray-300 bg-gray-50 hover:bg-green-50/50'
                   }`}
+                  style={{
+                    borderColor: isDragging ? '#2D5016' : undefined,
+                    '--tw-border-opacity': isDragging ? '1' : undefined
+                  }}
                 >
                   <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
                   <p className="text-gray-600 mb-2">Drag and drop your plant photo here</p>
@@ -122,7 +126,7 @@ export default function PlantClinicAnalysis() {
                     onChange={handleImageUpload}
                     className="hidden"
                   />
-                  <div className="group cursor-pointer inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:from-green-700 hover:to-green-800 transition-all duration-300 hover:scale-105">
+                  <div className="group cursor-pointer inline-flex items-center gap-3 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{backgroundColor: '#2D5016'}}>
                     <Camera className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
                     <span>Diagnose Your Plant</span>
                   </div>

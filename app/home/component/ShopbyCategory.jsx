@@ -1,59 +1,58 @@
 'use client';
 
-import { Sprout, Heart, Shovel, Droplets } from 'lucide-react';
-
 const categories = [
   {
     id: 1,
-    icon: Sprout,
+    icon: '/icon/icon1.png',
     title: 'Plants',
     description: 'Indoor & Outdoor Plants for every space',
-    color: 'from-green-400 to-green-600'
+    color: 'bg-white'
   },
   {
     id: 2,
-    icon: Heart,
+    icon: '/icon/icon2.png',
     title: 'Medicine',
     description: 'Natural Plant Care Solutions',
-    color: 'from-emerald-400 to-emerald-600'
+    color: 'bg-white'
   },
   {
     id: 3,
-    icon: Shovel,
+    icon: '/icon/icon3.png',
     title: 'Equipment',
     description: 'Professional Gardening tools',
-    color: 'from-teal-400 to-teal-600'
+    color: 'bg-white'
   },
   {
     id: 4,
-    icon: Droplets,
+    icon: '/icon/icon4.png',
     title: 'Fertilizers',
     description: 'Safe & effective plant protection',
-    color: 'from-green-500 to-green-700'
+    color: 'bg-white'
   }
 ];
 
 export default function ShopByCategory() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 lg:py-24 bg-white" >
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-green-900 mb-4">
+          <h2 className="text-3xl lg:text-5xl font-bold text-green-900 mb-4">
             Shop by Category
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto rounded-full"></div>
         </div>
 
         {/* Category Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (
               <div
                 key={category.id}
-                className="group relative bg-gradient-to-br from-yellow-50 to-green-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden"
+                className="group relative rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden"
                 style={{
+                  background: `linear-gradient(135deg, #F5F5DC, #F5F5DC)`,
                   animationDelay: `${index * 100}ms`
                 }}
               >
@@ -65,13 +64,13 @@ export default function ShopByCategory() {
                 
                 {/* Icon Container */}
                 <div className="relative mb-6 flex justify-center">
-                  <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 group-hover:rotate-6`}>
-                    <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
+                  <div className={`w-14 h-14 md:h-20 md:w-20 rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 group-hover:rotate-6`}>
+                    <img src={category.icon} alt={category.title} className="w-8 h-8 md:h-10 md:w-10" />
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="relative text-center space-y-3">
+                <div className="relative text-center space-y-3 ">
                   <h3 className="text-xl font-bold text-green-900 group-hover:text-green-700 transition-colors duration-300">
                     {category.title}
                   </h3>
