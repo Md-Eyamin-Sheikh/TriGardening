@@ -95,7 +95,7 @@ export default function ShopByCategory() {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <button className="group relative px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl hover:from-green-700 hover:to-green-800 transition-all duration-300 hover:scale-105 overflow-hidden">
             <span className="relative z-10 flex items-center gap-2">
               Browse All Categories
@@ -105,7 +105,7 @@ export default function ShopByCategory() {
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
