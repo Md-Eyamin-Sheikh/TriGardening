@@ -141,12 +141,12 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Main Content */}
+      {/* Main Content with Sidebar */}
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
           
           {/* Blog Posts - Main Content */}
-          <main className="lg:col-span-3 order-2 lg:order-1">
+          <main className="flex-1 lg:w-3/4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
               {blogPosts.slice(0, visiblePosts).map((post) => (
                 <article
@@ -210,7 +210,7 @@ export default function BlogPage() {
           </main>
 
           {/* Sidebar */}
-          <aside className="lg:col-span-1 order-1 lg:order-2 space-y-4 sm:space-y-6 lg:space-y-8">
+          <aside className="w-full lg:w-1/4 lg:min-w-[300px] space-y-4 sm:space-y-6 lg:space-y-8">
             
             {/* Search Box */}
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-md sm:shadow-lg p-4 sm:p-6">
@@ -284,5 +284,6 @@ export default function BlogPage() {
         </div>
       </div>
     </div>
+   
   );
 }
