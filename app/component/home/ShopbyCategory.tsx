@@ -46,7 +46,6 @@ export default function ShopByCategory() {
         {/* Category Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
           {categories.map((category, index) => {
-            const Icon = category.icon;
             return (
               <div
                 key={category.id}

@@ -1,9 +1,8 @@
-import Image from "next/image";
-import Hero from "./Page/home/component/Hero"
-import ShopbyCategory from "./Page/home/component/ShopbyCategory"
-import FeaturedProduct from "./Page/home/component/FeaturedProduct"
-import PopularProducts from "./Page/home/component/PopularProducts"
-import PlantClinicAnalysis from "./Page/home/component/PlantClinicAnalysis";
+import Hero from "./component/home/Hero"
+import ShopbyCategory from "./component/home/ShopbyCategory"
+import FeaturedProduct from "./component/home/FeaturedProduct"
+import PopularProducts from "./component/home/PopularProducts"
+import PlantClinicAnalysis from "./component/home/PlantClinicAnalysis";
 
 export default function Home() {
   return (<div>

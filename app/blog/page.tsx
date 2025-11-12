@@ -10,7 +10,7 @@ const blogPosts = [
     excerpt: 'Discover the secrets to keeping your houseplants healthy and thriving year-round with these expert tips...',
     image: 'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&h=600&fit=crop',
     category: 'Post Type',
-    author: "Writer's Name",
+    author: "Writer&apos;s Name",
     date: 'September 19, 2025',
     readTime: '5min Read'
   },
@@ -20,7 +20,7 @@ const blogPosts = [
     excerpt: 'Discover the secrets to keeping your houseplants healthy and thriving year-round with these expert tips...',
     image: 'https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=800&h=600&fit=crop',
     category: 'Post Type',
-    author: "Writer's Name",
+    author: "Writer&apos;s Name",
     date: 'September 19, 2025',
     readTime: '5min Read'
   },
@@ -30,7 +30,7 @@ const blogPosts = [
     excerpt: 'Discover the secrets to keeping your houseplants healthy and thriving year-round with these expert tips...',
     image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&h=600&fit=crop',
     category: 'Post Type',
-    author: "Writer's Name",
+    author: "Writer&apos;s Name",
     date: 'September 19, 2025',
     readTime: '5min Read'
   },
@@ -40,7 +40,7 @@ const blogPosts = [
     excerpt: 'Discover the secrets to keeping your houseplants healthy and thriving year-round with these expert tips...',
     image: 'https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=800&h=600&fit=crop',
     category: 'Post Type',
-    author: "Writer's Name",
+    author: "Writer&apos;s Name",
     date: 'September 19, 2025',
     readTime: '5min Read'
   }
@@ -130,7 +130,7 @@ export default function BlogPage() {
                 <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                   <User className="w-3 h-3 sm:w-4 sm:h-4" />
                 </div>
-                <span>Writer's Name</span>
+                <span>Writer&apos;s Name</span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />

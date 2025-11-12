@@ -77,7 +77,7 @@ export default function ProductsPage() {
     );
   };
 
-  const handleCheckbox = (value, setter, state) => {
+  const handleCheckbox = (value, setter) => {
     setter((prev) =>
       prev.includes(value)
         ? prev.filter((item) => item !== value)

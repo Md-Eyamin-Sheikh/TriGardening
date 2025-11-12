@@ -11,6 +11,7 @@ export default function Navbar() {
   const [activeLink, setActiveLink] = useState('#home');
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -48,9 +49,9 @@ export default function Navbar() {
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-1">
             <NavLink href="/" active={activeLink === '/'} onClick={() => setActiveLink('/')}>Home</NavLink>
-            <NavLink href="/Page/products" active={activeLink === '/Page/products'} onClick={() => setActiveLink('/Page/products')}>Products</NavLink>
-            <NavLink href="/Page/BlogPage" active={activeLink === '/Page/BlogPage'} onClick={() => setActiveLink('/Page/BlogPage')}>Blog</NavLink>
-            <NavLink href="#plant-clinic" active={activeLink === '#plant-clinic'} onClick={() => setActiveLink('#plant-clinic')}>Plant Clinic</NavLink>
+            <NavLink href="/products" active={activeLink === '/products'} onClick={() => setActiveLink('/products')}>Products</NavLink>
+            <NavLink href="/blog" active={activeLink === '/blog'} onClick={() => setActiveLink('/blog')}>Blog</NavLink>
+            <NavLink href="/ai-chatbot" active={activeLink === '/ai-chatbot'} onClick={() => setActiveLink('/ai-chatbot')}>Plant Clinic</NavLink>
           </div>
 
           {/* Right Side Actions */}
@@ -111,16 +112,16 @@ export default function Navbar() {
         mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       }`}>
         <div className="px-4 pt-2 pb-4 space-y-1 backdrop-blur-md border-t border-white/10" style={{backgroundColor: '#2D5016CC'}}>
-          <MobileNavLink href="#home" active={activeLink === '#home'} onClick={() => { setActiveLink('#home'); setMobileMenuOpen(false); }}>
+          <MobileNavLink href="/" active={activeLink === '/'} onClick={() => { setActiveLink('/'); setMobileMenuOpen(false); }}>
             Home
           </MobileNavLink>
-          <MobileNavLink href="#products" active={activeLink === '#products'} onClick={() => { setActiveLink('#products'); setMobileMenuOpen(false); }}>
+          <MobileNavLink href="/products" active={activeLink === '/products'} onClick={() => { setActiveLink('/products'); setMobileMenuOpen(false); }}>
             Products
           </MobileNavLink>
-          <MobileNavLink href="#blog" active={activeLink === '#blog'} onClick={() => { setActiveLink('#blog'); setMobileMenuOpen(false); }}>
+          <MobileNavLink href="/blog" active={activeLink === '/blog'} onClick={() => { setActiveLink('/blog'); setMobileMenuOpen(false); }}>
             Blog
           </MobileNavLink>
-          <MobileNavLink href="#plant-clinic" active={activeLink === '#plant-clinic'} onClick={() => { setActiveLink('#plant-clinic'); setMobileMenuOpen(false); }}>
+          <MobileNavLink href="/ai-chatbot" active={activeLink === '/ai-chatbot'} onClick={() => { setActiveLink('/ai-chatbot'); setMobileMenuOpen(false); }}>
             Plant Clinic
           </MobileNavLink>
           
@@ -149,10 +150,23 @@ export default function Navbar() {
   );
 }
 
-function NavLink({ href, children, active = false }) {
+function MobileNavLink({ href, children, onClick }) {
   return (
     <a
       href={href}
+      onClick={onClick}
+      className="block px-4 py-3 text-white font-medium hover:bg-white/10 hover:text-orange-300 rounded-lg transition-all duration-300"
+    >
+      {children}
+    </a>
+  );
+}
+
+function NavLink({ href, children, active, onClick }) {
+  return (
+    <a
+      href={href}
+      onClick={onClick}
       className={`relative px-4 py-2 text-white font-medium text-[15px] rounded-lg transition-all duration-300 group ${
         active ? 'text-orange-300' : 'hover:text-orange-300'
       }`}
@@ -164,18 +178,6 @@ function NavLink({ href, children, active = false }) {
       <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-orange-400 group-hover:w-3/4 transition-all duration-300 ${
         active ? 'w-3/4' : ''
       }`}></span>
-    </a>
-  );
-}
-
-function MobileNavLink({ href, children, onClick }) {
-  return (
-    <a
-      href={href}
-      onClick={onClick}
-      className="block px-4 py-3 text-white font-medium hover:bg-white/10 hover:text-orange-300 rounded-lg transition-all duration-300"
-    >
-      {children}
     </a>
   );
 }

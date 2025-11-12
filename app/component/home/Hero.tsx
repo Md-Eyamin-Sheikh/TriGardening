@@ -35,16 +35,6 @@ export default function HeroSection() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [currentSlide, isAutoPlaying]);
-
   const nextSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
@@ -65,6 +55,16 @@ export default function HeroSection() {
     setCurrentSlide(index);
     setTimeout(() => setIsAnimating(false), 500);
   };
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentSlide, isAutoPlaying, nextSlide]);
 
   return (
     <div className="relative w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[600px] mt-20 overflow-hidden bg-gray-900">

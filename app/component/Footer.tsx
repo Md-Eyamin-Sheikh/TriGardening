@@ -1,6 +1,6 @@
 'use client';
 
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -25,7 +25,7 @@ export default function Footer() {
               Your slogan goes here
             </p>
             <p className="text-white/70 text-sm leading-relaxed pt-2">
-              Cultivating green spaces and nurturing nature's beauty. Your trusted partner for all gardening needs.
+              Cultivating green spaces and nurturing nature&apos;s beauty. Your trusted partner for all gardening needs.
             </p>
           </div>
 
@@ -134,11 +134,11 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <a 
-                href="mailto:supprot@trigardening.com" 
+                href="mailto:support@trigardening.com" 
                 className="flex items-center text-white/80 hover:text-orange-400 transition-colors duration-300 group"
               >
                 <Mail className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-sm">supprot@trigardening.com</span>
+                <span className="text-sm">support@trigardening.com</span>
               </a>
               
               <div className="pt-4 border-t border-white/20">
