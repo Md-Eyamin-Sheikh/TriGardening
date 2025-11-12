@@ -146,7 +146,7 @@ export default function AIChatbotPage() {
   }
 
   return (
-    <div className="flex h-screen pt-16 sm:pt-20 lg:pt-24 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 relative">
+    <div className="flex h-screen pt-16 sm:pt-20 lg:pt-24 bg-gradient-to-br from-green-50 via-green-50 to-green-100 relative">
       {/* Mobile Overlay */}
       {sidebarOpen && (
         <div 
@@ -159,21 +159,22 @@ export default function AIChatbotPage() {
       <div 
         className={`${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:translate-x-0 fixed lg:relative z-50 lg:z-auto w-72 lg:w-80 flex-shrink-0 transition-transform duration-300 ease-in-out bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 shadow-2xl`}
+        } lg:translate-x-0 fixed lg:relative z-50 lg:z-auto w-72 lg:w-80 flex-shrink-0 transition-transform duration-300 ease-in-out shadow-2xl`}
+        style={{ background: 'linear-gradient(135deg, #2D5016 0%, #1a3009 50%, #0f1a05 100%)' }}
       >
         <div className="h-full flex flex-col">
           {/* Header */}
           <div className="p-6 border-b border-white/10">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl bg-gradient-to-br from-emerald-400 to-teal-500 ring-4 ring-white/20">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl ring-4 ring-white/20" style={{ background: 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)' }}>
                   <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
                 <div>
                   <h2 className="text-white font-bold text-xl tracking-tight">কৃষি AI</h2>
-                  <p className="text-emerald-200 text-xs font-medium">Agricultural Expert</p>
+                  <p className="text-green-200 text-xs font-medium">Agricultural Expert</p>
                 </div>
               </div>
               <button 
@@ -191,7 +192,11 @@ export default function AIChatbotPage() {
           <div className="flex-1 overflow-y-auto p-4 space-y-3 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
             <button 
               onClick={handleNewChat}
-              className="w-full text-left px-5 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-semibold hover:from-emerald-400 hover:to-teal-400 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="w-full text-left px-5 py-4 rounded-2xl text-white text-sm font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              style={{ 
+                background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
+                '&:hover': { background: 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)' }
+              }}
             >
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center backdrop-blur-sm">
@@ -218,11 +223,11 @@ export default function AIChatbotPage() {
             </button>
 
             <div className="pt-6 border-t border-white/10 mt-4">
-              <h3 className="text-emerald-200 text-xs font-bold mb-4 px-2 uppercase tracking-wider">Recent Conversations</h3>
+              <h3 className="text-green-200 text-xs font-bold mb-4 px-2 uppercase tracking-wider">Recent Conversations</h3>
               <div className="space-y-2">
-                <div className="px-4 py-3 bg-gradient-to-r from-white/15 to-white/5 rounded-xl text-white text-sm border-l-4 border-emerald-400 hover:from-white/20 hover:to-white/10 transition-all cursor-pointer">
+                <div className="px-4 py-3 bg-gradient-to-r from-white/15 to-white/5 rounded-xl text-white text-sm border-l-4 border-green-400 hover:from-white/20 hover:to-white/10 transition-all cursor-pointer">
                   <div className="flex items-center gap-2 mb-1">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                     <span className="font-semibold">Plant Disease Help</span>
                   </div>
                   <p className="text-white/70 text-xs">How to fix yellow leaves</p>
@@ -253,21 +258,21 @@ export default function AIChatbotPage() {
       {/* Chat Area */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Mobile Header */}
-        <div className="lg:hidden bg-white/80 backdrop-blur-xl border-b border-emerald-100 p-4 flex items-center justify-between shadow-sm">
+        <div className="lg:hidden bg-white/80 backdrop-blur-xl border-b border-green-100 p-4 flex items-center justify-between shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }}>
               <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
             </div>
             <div>
-              <h1 className="font-bold text-emerald-900 text-lg">কৃষি Chatbot</h1>
-              <p className="text-xs text-emerald-600">Agricultural Expert</p>
+              <h1 className="font-bold text-lg" style={{ color: '#2D5016' }}>কৃষি Chatbot</h1>
+              <p className="text-xs text-green-600">Agricultural Expert</p>
             </div>
           </div>
           <button 
             onClick={() => setSidebarOpen(true)}
-            className="p-2.5 hover:bg-emerald-50 rounded-xl transition-all duration-200 text-emerald-700"
+            className="p-2.5 hover:bg-green-50 rounded-xl transition-all duration-200 text-green-700"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -284,9 +289,14 @@ export default function AIChatbotPage() {
                   <div 
                     className={`w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-200 ${
                       m.role === 'assistant'
-                        ? 'bg-gradient-to-br from-emerald-500 to-teal-500 ring-4 ring-emerald-100'
-                        : 'bg-gradient-to-br from-amber-400 to-orange-400 ring-4 ring-amber-100'
+                        ? 'ring-4 ring-green-100'
+                        : 'ring-4 ring-amber-100'
                     }`}
+                    style={{
+                      background: m.role === 'assistant' 
+                        ? 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)'
+                        : 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
+                    }}
                   >
                     {m.role === 'assistant' ? (
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -304,9 +314,10 @@ export default function AIChatbotPage() {
                   <div 
                     className={`inline-block rounded-3xl px-6 py-4 max-w-2xl shadow-lg transition-all duration-200 group-hover:shadow-xl ${
                       m.role === 'user' 
-                        ? 'bg-gradient-to-br from-emerald-600 to-teal-600 text-white ml-auto' 
-                        : 'bg-white border-2 border-emerald-100 text-gray-800'
+                        ? 'text-white ml-auto' 
+                        : 'bg-white border-2 border-green-100 text-gray-800'
                     }`}
+                    style={m.role === 'user' ? { background: 'linear-gradient(135deg, #2D5016 0%, #1a3009 100%)' } : {}}
                   >
                     <p className="text-sm leading-relaxed whitespace-pre-wrap">
                       {m.content}
@@ -326,17 +337,17 @@ export default function AIChatbotPage() {
             {isLoading && (
               <div className="flex gap-4 group">
                 <div className="flex-shrink-0">
-                  <div className="w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg bg-gradient-to-br from-emerald-500 to-teal-500 ring-4 ring-emerald-100 animate-pulse">
+                  <div className="w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg ring-4 ring-green-100 animate-pulse" style={{ background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }}>
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
                 </div>
-                <div className="bg-white border-2 border-emerald-100 rounded-3xl px-6 py-4 shadow-lg">
+                <div className="bg-white border-2 border-green-100 rounded-3xl px-6 py-4 shadow-lg">
                   <div className="flex gap-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
                   </div>
                 </div>
               </div>
@@ -348,14 +359,18 @@ export default function AIChatbotPage() {
         {/* Input Area */}
         <form 
           onSubmit={handleSubmit} 
-          className="border-t border-emerald-100 bg-white/90 backdrop-blur-xl p-4 sm:p-6 shadow-2xl"
+          className="border-t border-green-100 bg-white/90 backdrop-blur-xl p-4 sm:p-6 shadow-2xl"
         >
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-3 bg-white rounded-3xl shadow-xl border-2 border-emerald-200 p-2 hover:border-emerald-300 transition-all duration-200">
+            <div className="flex items-center gap-3 bg-white rounded-3xl shadow-xl border-2 border-green-200 p-2 hover:border-green-300 transition-all duration-200">
               <button 
                 type="button"
                 onClick={handleImageUpload}
-                className="w-11 h-11 rounded-2xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 hover:scale-110 active:scale-95 transition-all duration-200 shadow-lg group"
+                className="w-11 h-11 rounded-2xl flex items-center justify-center flex-shrink-0 hover:scale-110 active:scale-95 transition-all duration-200 shadow-lg group"
+                style={{ 
+                  background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
+                  '&:hover': { background: 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)' }
+                }}
               >
                 <svg className="w-5 h-5 text-white group-hover:rotate-12 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -384,7 +399,11 @@ export default function AIChatbotPage() {
               <button 
                 type="submit"
                 disabled={!input?.trim() || isLoading}
-                className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 hover:scale-110 active:scale-95 transition-all duration-200 shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 group"
+                className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 hover:scale-110 active:scale-95 transition-all duration-200 shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 group"
+                style={{ 
+                  background: 'linear-gradient(135deg, #2D5016 0%, #1a3009 100%)',
+                  '&:hover': { background: 'linear-gradient(135deg, #22c55e 0%, #2D5016 100%)' }
+                }}
               >
                 <svg className="w-6 h-6 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
