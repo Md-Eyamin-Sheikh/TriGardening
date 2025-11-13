@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Star, StarHalf, Heart, Plus, Minus, ChevronDown } from 'lucide-react';
 
 export default function PlantProductPage() {
@@ -11,55 +11,34 @@ export default function PlantProductPage() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [expandedDesc, setExpandedDesc] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [relatedProducts, setRelatedProducts] = useState([]);
+  const [suggestions, setSuggestions] = useState([]);
+
+  useEffect(() => {
+    fetchRelatedProducts();
+  }, []);
+
+  const fetchRelatedProducts = async () => {
+    try {
+      const response = await fetch('/api/products');
+      const data = await response.json();
+      
+      // Get 4 random products for related products
+      const shuffled = [...data].sort(() => 0.5 - Math.random());
+      setRelatedProducts(shuffled.slice(0, 4));
+      
+      // Get 5 random products for suggestions
+      setSuggestions(shuffled.slice(4, 9));
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  };
 
   const images = [
     'https://images.unsplash.com/photo-1597690365552-92c58db61e92?w=500&h=500&fit=crop',
     'https://images.unsplash.com/photo-1617059063772-34532796cdb8?w=500&h=500&fit=crop',
     'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=500&h=500&fit=crop',
     'https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=500&h=500&fit=crop'
-  ];
-
-  const relatedProducts = [
-    {
-      name: 'Monstera Deliciosa',
-      nameBn: 'মনস্টেরা প্ল্যান্ট',
-      price: '2000 - 3,400',
-      rating: 4.5,
-      reviews: 24,
-      image: 'https://images.unsplash.com/photo-1614594895304-fe7116ac3b58?w=300&h=300&fit=crop'
-    },
-    {
-      name: 'Organic Compost Fertilizer',
-      nameBn: 'জৈব সার',
-      price: '60 - 440',
-      rating: 4,
-      reviews: 12,
-      image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=300&h=300&fit=crop'
-    },
-    {
-      name: 'Pruning Shears',
-      nameBn: 'কাঁচি',
-      price: '180 - 450',
-      rating: 4.5,
-      reviews: 34,
-      image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=300&h=300&fit=crop'
-    },
-    {
-      name: 'Snake Plant',
-      nameBn: 'স্নেক প্ল্যান্ট',
-      price: '150 - 500',
-      rating: 4,
-      reviews: 35,
-      image: 'https://images.unsplash.com/photo-1593482892290-f54927ae1bb4?w=300&h=300&fit=crop'
-    }
-  ];
-
-  const suggestions = [
-    { name: 'Money Plant', nameBn: 'মানি প্ল্যান্ট', price: '150', image: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=100&h=100&fit=crop' },
-    { name: 'Snake Plant', nameBn: 'স্নেক প্ল্যান্ট', price: '180', image: 'https://images.unsplash.com/photo-1593482892290-f54927ae1bb4?w=100&h=100&fit=crop' },
-    { name: 'Monstera Deliciosa', nameBn: 'মনস্টেরা প্ল্যান্ট', price: '2,400', image: 'https://images.unsplash.com/photo-1614594895304-fe7116ac3b58?w=100&h=100&fit=crop' },
-    { name: 'Verni Compost', nameBn: 'ভার্মি কম্পোস্ট', price: '900', image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=100&h=100&fit=crop' },
-    { name: 'Organic Pesticide', nameBn: 'জৈব কীটনাশক', price: '450', image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=100&h=100&fit=crop' }
   ];
 
   const reviews = [
@@ -330,7 +309,7 @@ export default function PlantProductPage() {
                     <div className="flex-1 min-w-0">
                       <h4 className="font-semibold text-xs sm:text-sm text-gray-900 truncate">{item.name}</h4>
                       <p className="text-xs text-gray-500 mb-1 truncate">{item.nameBn}</p>
-                      <p className="font-bold text-xs sm:text-sm" style={{ color: '#2D5016' }}>৳ {item.price}</p>
+                      <p className="font-bold text-xs sm:text-sm" style={{ color: '#2D5016' }}>৳ {item.price.min} - ৳ {item.price.max}</p>
                     </div>
                   </div>
                 ))}
@@ -355,7 +334,7 @@ export default function PlantProductPage() {
                     {renderStars(product.rating)}
                     <span className="text-xs text-gray-500 ml-1">({product.reviews})</span>
                   </div>
-                  <p className="font-bold mb-2 sm:mb-3 text-xs sm:text-sm" style={{ color: '#2D5016' }}>৳ {product.price}</p>
+                  <p className="font-bold mb-2 sm:mb-3 text-xs sm:text-sm" style={{ color: '#2D5016' }}>৳ {product.price.min} - ৳ {product.price.max}</p>
                   <button className="w-full text-white py-1.5 sm:py-2 rounded-md sm:rounded-lg font-medium text-xs sm:text-sm transition-all" style={{ backgroundColor: '#2D5016' }}>
                     Add to Cart
                   </button>

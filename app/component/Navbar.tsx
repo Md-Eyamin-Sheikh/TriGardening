@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { Search, ShoppingCart, User, Phone, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -8,10 +9,9 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [activeLink, setActiveLink] = useState('#home');
+  const pathname = usePathname();
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -48,10 +48,10 @@ export default function Navbar() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-1">
-            <NavLink href="/" active={activeLink === '/'} onClick={() => setActiveLink('/')}>Home</NavLink>
-            <NavLink href="/products" active={activeLink === '/products'} onClick={() => setActiveLink('/products')}>Products</NavLink>
-            <NavLink href="/blog" active={activeLink === '/blog'} onClick={() => setActiveLink('/blog')}>Blog</NavLink>
-            <NavLink href="/ai-chatbot" active={activeLink === '/ai-chatbot'} onClick={() => setActiveLink('/ai-chatbot')}>Plant Clinic</NavLink>
+            <NavLink href="/" active={pathname === '/'}>Home</NavLink>
+            <NavLink href="/products" active={pathname === '/products'}>Products</NavLink>
+            <NavLink href="/blog" active={pathname === '/blog'}>Blog</NavLink>
+            <NavLink href="/ai-chatbot" active={pathname === '/ai-chatbot'}>Plant Clinic</NavLink>
           </div>
 
           {/* Right Side Actions */}
@@ -112,16 +112,16 @@ export default function Navbar() {
         mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       }`}>
         <div className="px-4 pt-2 pb-4 space-y-1 backdrop-blur-md border-t border-white/10" style={{backgroundColor: '#2D5016CC'}}>
-          <MobileNavLink href="/" active={activeLink === '/'} onClick={() => { setActiveLink('/'); setMobileMenuOpen(false); }}>
+          <MobileNavLink href="/" active={pathname === '/'} onClick={() => setMobileMenuOpen(false)}>
             Home
           </MobileNavLink>
-          <MobileNavLink href="/products" active={activeLink === '/products'} onClick={() => { setActiveLink('/products'); setMobileMenuOpen(false); }}>
+          <MobileNavLink href="/products" active={pathname === '/products'} onClick={() => setMobileMenuOpen(false)}>
             Products
           </MobileNavLink>
-          <MobileNavLink href="/blog" active={activeLink === '/blog'} onClick={() => { setActiveLink('/blog'); setMobileMenuOpen(false); }}>
+          <MobileNavLink href="/blog" active={pathname === '/blog'} onClick={() => setMobileMenuOpen(false)}>
             Blog
           </MobileNavLink>
-          <MobileNavLink href="/ai-chatbot" active={activeLink === '/ai-chatbot'} onClick={() => { setActiveLink('/ai-chatbot'); setMobileMenuOpen(false); }}>
+          <MobileNavLink href="/ai-chatbot" active={pathname === '/ai-chatbot'} onClick={() => setMobileMenuOpen(false)}>
             Plant Clinic
           </MobileNavLink>
           
@@ -162,11 +162,10 @@ function MobileNavLink({ href, children, onClick }) {
   );
 }
 
-function NavLink({ href, children, active, onClick }) {
+function NavLink({ href, children, active }) {
   return (
     <a
       href={href}
-      onClick={onClick}
       className={`relative px-4 py-2 text-white font-medium text-[15px] rounded-lg transition-all duration-300 group ${
         active ? 'text-orange-300' : 'hover:text-orange-300'
       }`}

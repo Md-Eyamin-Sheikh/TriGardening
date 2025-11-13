@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "Monstera Deliciosa",
+    "nameBn": "মনস্টেরা প্ল্যান্ট",
+    "category": "Indoor Plant",
+    "image": "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=500&h=500&fit=crop",
+    "price": { "min": 2000, "max": 3400 },
+    "rating": 4.5,
+    "reviews": 24
+  },
+  {
+    "id": 2,
+    "name": "Organic Compost Fertilizer",
+    "nameBn": "জৈব সার",
+    "category": "Fertilizer",
+    "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&h=500&fit=crop",
+    "price": { "min": 60, "max": 440 },
+    "rating": 4,
+    "reviews": 12
+  },
+  {
+    "id": 3,
+    "name": "Pruning Shears",
+    "nameBn": "কাঁচি",
+    "category": "Equipment",
+    "image": "https://images.unsplash.com/photo-1416339442236-8ceb164046f8?w=500&h=500&fit=crop",
+    "price": { "min": 180, "max": 450 },
+    "rating": 4.5,
+    "reviews": 34
+  },
+  {
+    "id": 4,
+    "name": "Snake Plant",
+    "nameBn": "স্নেক প্ল্যান্ট",
+    "category": "Indoor Plant",
+    "image": "https://images.unsplash.com/photo-1593482892290-f54927ae1bb4?w=500&h=500&fit=crop",
+    "price": { "min": 150, "max": 500 },
+    "rating": 4,
+    "reviews": 35
+  },
+  {
+    "id": 5,
+    "name": "Golden Pothos",
+    "nameBn": "গোল্ডেন পথোস",
+    "category": "Indoor Plant",
+    "image": "https://images.unsplash.com/photo-1597690365552-92c58db61e92?w=500&h=500&fit=crop",
+    "price": { "min": 240, "max": 450 },
+    "rating": 4.7,
+    "reviews": 89
+  },
+  {
+    "id": 6,
+    "name": "Peace Lily",
+    "nameBn": "পিস লিলি",
+    "category": "Indoor Plant",
+    "image": "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=500&h=500&fit=crop",
+    "price": { "min": 300, "max": 600 },
+    "rating": 4.3,
+    "reviews": 67
+  },
+  {
+    "id": 7,
+    "name": "Rubber Plant",
+    "nameBn": "রাবার প্ল্যান্ট",
+    "category": "Indoor Plant",
+    "image": "https://images.unsplash.com/photo-1614594895304-fe7116ac3b58?w=500&h=500&fit=crop",
+    "price": { "min": 400, "max": 800 },
+    "rating": 4.6,
+    "reviews": 45
+  },
+  {
+    "id": 8,
+    "name": "Watering Can",
+    "nameBn": "পানির পাত্র",
+    "category": "Equipment",
+    "image": "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=500&h=500&fit=crop",
+    "price": { "min": 120, "max": 300 },
+    "rating": 4.2,
+    "reviews": 28
+  },
+  {
+    "id": 9,
+    "name": "Organic Pesticide",
+    "nameBn": "জৈব কীটনাশক",
+    "category": "Fertilizer",
+    "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&h=500&fit=crop",
+    "price": { "min": 200, "max": 450 },
+    "rating": 4.1,
+    "reviews": 19
+  },
+  {
+    "id": 10,
+    "name": "Fiddle Leaf Fig",
+    "nameBn": "ফিডল লিফ ফিগ",
+    "category": "Indoor Plant",
+    "image": "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=500&h=500&fit=crop",
+    "price": { "min": 800, "max": 1500 },
+    "rating": 4.4,
+    "reviews": 52
+  },
+  {
+    "id": 11,
+    "name": "Garden Gloves",
+    "nameBn": "বাগানের গ্লাভস",
+    "category": "Equipment",
+    "image": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=500&h=500&fit=crop",
+    "price": { "min": 80, "max": 200 },
+    "rating": 4.0,
+    "reviews": 41
+  },
+  {
+    "id": 12,
+    "name": "Vermi Compost",
+    "nameBn": "ভার্মি কম্পোস্ট",
+    "category": "Fertilizer",
+    "image": "https://images.unsplash.com/photo-1617059063772-34532796cdb8?w=500&h=500&fit=crop",
+    "price": { "min": 150, "max": 900 },
+    "rating": 4.5,
+    "reviews": 73
+  },
+  {
+    "id": 13,
+    "name": "ZZ Plant",
+    "nameBn": "জেড জেড প্ল্যান্ট",
+    "category": "Indoor Plant",
+    "image": "https://images.unsplash.com/photo-1586093248292-4e6ef75924d8?w=500&h=500&fit=crop",
+    "price": { "min": 350, "max": 700 },
+    "rating": 4.8,
+    "reviews": 91
+  },
+  {
+    "id": 14,
+    "name": "Plant Food",
+    "nameBn": "উদ্ভিদের খাবার",
+    "category": "Fertilizer",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=500&fit=crop",
+    "price": { "min": 100, "max": 350 },
+    "rating": 4.2,
+    "reviews": 36
+  },
+  {
+    "id": 15,
+    "name": "Aloe Vera",
+    "nameBn": "অ্যালোভেরা",
+    "category": "Indoor Plant",
+    "image": "https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?w=500&h=500&fit=crop",
+    "price": { "min": 120, "max": 300 },
+    "rating": 4.3,
+    "reviews": 58
+  },
+  {
+    "id": 16,
+    "name": "Garden Trowel",
+    "nameBn": "বাগানের কোদাল",
+    "category": "Equipment",
+    "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&h=500&fit=crop",
+    "price": { "min": 150, "max": 400 },
+    "rating": 4.1,
+    "reviews": 22
+  },
+  {
+    "id": 17,
+    "name": "Spider Plant",
+    "nameBn": "স্পাইডার প্ল্যান্ট",
+    "category": "Indoor Plant",
+    "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=500&fit=crop",
+    "price": { "min": 180, "max": 400 },
+    "rating": 4.4,
+    "reviews": 47
+  },
+  {
+    "id": 18,
+    "name": "Liquid Fertilizer",
+    "nameBn": "তরল সার",
+    "category": "Fertilizer",
+    "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&h=500&fit=crop",
+    "price": { "min": 180, "max": 500 },
+    "rating": 4.0,
+    "reviews": 31
+  },
+  {
+    "id": 19,
+    "name": "Boston Fern",
+    "nameBn": "বোস্টন ফার্ন",
+    "category": "Indoor Plant",
+    "image": "https://images.unsplash.com/photo-1463154545680-d59320fd685d?w=500&h=500&fit=crop",
+    "price": { "min": 250, "max": 550 },
+    "rating": 4.2,
+    "reviews": 39
+  },
+  {
+    "id": 20,
+    "name": "Plant Pot Set",
+    "nameBn": "গাছের পাত্র সেট",
+    "category": "Equipment",
+    "image": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=500&h=500&fit=crop",
+    "price": { "min": 300, "max": 800 },
+    "rating": 4.3,
+    "reviews": 64
+  }
+]
